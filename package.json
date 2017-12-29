@@ -1,0 +1,26 @@
+{
+  "name": "homebridge-yalealarmsystem",
+  "version": "1.0.0",
+  "description": "Homebridge plugin for the Yale Smart Burglar Alarm System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan-fielding/homebridge-yalealarmsystem.git"
+  },
+  "keywords": [
+    "Homebridge",
+    "Yale"
+  ],
+  "author": "Jonathan Fielding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathan-fielding/homebridge-yalealarmsystem/issues"
+  },
+  "homepage": "https://github.com/jonathan-fielding/homebridge-yalealarmsystem#readme",
+  "dependencies": {
+    "yalealarmsystem": "^1.0.0"
+  }
+}
