@@ -5,7 +5,7 @@ module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
 
-    homebridge.registerAccessory("homebridge-yaleAlarmSystem", "YaleAlarm", YaleAlarm);
+    homebridge.registerAccessory("homebridge-yalealarmsystem", "YaleAlarm", YaleAlarm);
 }
 
 function YaleAlarm(log, config) {

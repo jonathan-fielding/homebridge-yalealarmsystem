@@ -1,5 +1,5 @@
 {
-  "name": "homebridge-yaleAlarmSystem",
+  "name": "homebridge-yalealarmsystem",
   "version": "0.0.1",
   "description": "Homebridge plugin for the Yale Smart Burglar Alarm System",
   "main": "index.js",
