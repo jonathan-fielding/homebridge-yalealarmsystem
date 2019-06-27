@@ -21,6 +21,6 @@
     "homebridge": ">=0.2.0"
   },
   "dependencies": {
-    "yalealarmsystem": "^1.0.1"
+    "yalealarmsystem": "2.0.0"
   }
 }

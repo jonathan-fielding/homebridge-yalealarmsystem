@@ -1,5 +1,5 @@
 var Service, Characteristic;
-const { getSessionCookie, getStatus, setStatus } = require('yalealarmsystem');
+const { getAccessToken, getStatus, setStatus } = require('yalealarmsystem');
 
 module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
@@ -28,11 +28,12 @@ function YaleAlarm(log, config) {
 YaleAlarm.prototype.getState = function(callback) {
     this.log("Getting current state...");
 
-    getSessionCookie(
+    getAccessToken(
         this.config.username, 
         this.config.password
     ).then(getStatus).then((response) => {
-        callback(null, response.message[0].mode === 'arm');
+        console.log(response);
+        callback(null, response === 'arm');
     }).catch(console.log);
 }
 
@@ -41,11 +42,11 @@ YaleAlarm.prototype.setState = function(state, callback) {
 
     console.log(`Set Alarm state to ${alarmState}`);
 
-    getSessionCookie(
+    getAccessToken(
         this.config.username, 
         this.config.password
-    ).then((sessionCookie) => {
-        setStatus(sessionCookie, alarmState).then(resp => resp.json()).then((response) => {
+    ).then((accessToken) => {
+        setStatus(accessToken, alarmState).then((response) => { 
             var currentState = (state == Characteristic.LockTargetState.SECURED) ?
             Characteristic.LockCurrentState.SECURED : Characteristic.LockCurrentState.UNSECURED;
         
